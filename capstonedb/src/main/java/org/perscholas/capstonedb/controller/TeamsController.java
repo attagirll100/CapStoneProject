@@ -29,5 +29,5 @@ public class TeamsController {
     public HttpStatus deletePlayers(@PathVariable Long id) {
         return teamsService.deleteTeams(id);
     }
-    
+
 }

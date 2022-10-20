@@ -19,7 +19,6 @@ export class BasketballplayersComponent implements OnInit {
   getPlayers(): void {
     this.basketballplayersService.getPlayers()
       .subscribe(data => {
-        console.log(data);
         this.basketballplayers = data});
   }
 
