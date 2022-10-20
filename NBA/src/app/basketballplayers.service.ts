@@ -12,7 +12,7 @@ export class BasketballplayersService {
   constructor(private http: HttpClient) { }
 
   getPlayers(): Observable<Basketballplayers[]> {
-    return this.http.get<Basketballplayers[]>('/basketballplayers')
+    return this.http.get<Basketballplayers[]>(this.base_url +'basketballplayers')
   }
 
 
