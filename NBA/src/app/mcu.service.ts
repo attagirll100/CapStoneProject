@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http'
 import { Observable} from 'rxjs';
 import { Basketballplayers } from './types/Basketballplayers';
 import { Teams } from './types/Teams';
+import { Stadium } from './types/Stadium';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,10 @@ export class McuService {
 
   getTeams(): Observable<Teams[]> {
     return this.http.get<Teams[]>(this.base_url + 'teams');
+  }
+
+  getArenas(): Observable<Stadium[]> {
+    return this.http.get<Stadium[]>(this.base_url + 'stadium')
   }
 
 }

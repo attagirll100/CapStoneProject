@@ -4,13 +4,15 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BasketballplayersComponent } from './basketballplayers/basketballplayers.component';
 import { TeamsComponent } from './teams/teams.component';
-import { AppRoutingModule } from './app-routing.module'
+import { AppRoutingModule } from './app-routing.module';
+import { StadiumComponent } from './stadium/stadium.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     BasketballplayersComponent,
-    TeamsComponent
+    TeamsComponent,
+    StadiumComponent
   ],
   imports: [
     BrowserModule,
