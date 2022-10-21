@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TeamsService } from '../teams.service';
+import { McuService } from '../mcu.service';
 import { Teams } from '../types/Teams';
 
 @Component({
@@ -10,15 +10,14 @@ import { Teams } from '../types/Teams';
 export class TeamsComponent implements OnInit {
   teams: Teams[] = [];
 
-  constructor(private teamsService: TeamsService) { }
+  constructor(private mcuService: McuService) { }
 
   ngOnInit(): void {
     this.getTeams();
   }
 
   getTeams(): void {
-    this.teamsService.getTeams()
-    .subscribe((data: Teams[]) => {
-      this.teams= data}) 
-}
+    this.mcuService.getTeams()
+    .subscribe(data => this.teams = data); 
+  }
 }

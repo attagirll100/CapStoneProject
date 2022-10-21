@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BasketballplayersService } from '../basketballplayers.service';
+import { McuService } from '../mcu.service';
 import { Basketballplayers } from '../types/Basketballplayers';
 
 @Component({
@@ -10,16 +10,15 @@ import { Basketballplayers } from '../types/Basketballplayers';
 export class BasketballplayersComponent implements OnInit {
   basketballplayers: Basketballplayers[] = [];
 
-  constructor(private basketballplayersService: BasketballplayersService) { }
+  constructor(private mcuService: McuService) { }
 
   ngOnInit(): void {
     this.getPlayers();
   }
 
   getPlayers(): void {
-    this.basketballplayersService.getPlayers()
-      .subscribe(data => {
-        this.basketballplayers = data});
+    this.mcuService.getPlayers()
+    .subscribe(data => this.basketballplayers = data);
+  
   }
-
 }
