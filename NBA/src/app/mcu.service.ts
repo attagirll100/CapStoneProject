@@ -4,6 +4,8 @@ import { Observable} from 'rxjs';
 import { Basketballplayers } from './types/Basketballplayers';
 import { Teams } from './types/Teams';
 import { Stadium } from './types/Stadium';
+import { Birthplace } from './types/Birthplace';
+ 
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +25,10 @@ export class McuService {
 
   getArenas(): Observable<Stadium[]> {
     return this.http.get<Stadium[]>(this.base_url + 'stadium')
+  }
+
+  getPlaces(): Observable<Birthplace[]> {
+    return this.http.get<Birthplace[]>(this.base_url + "birthplace")
   }
 
 }
